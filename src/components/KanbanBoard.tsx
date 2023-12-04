@@ -32,7 +32,10 @@ const KanbanBoard = (props: any) => {
       </div>
 
       <div className="kanban-board flex m-20 ">
-        <div className="column w-1/4 bg-slate-100 p-4 rounded-lg mr-4 shadow-lg">
+        <div
+          className="column w-1/4 bg-slate-100 p-4 rounded-lg mr-4 shadow-lg"
+          style={{ minHeight: "400px" }}
+        >
           <h2 className="text-xl font-bold mb-2">No Iniciadas</h2>
           {tareasNoIniciadas.map((task: any) => (
             <Link
