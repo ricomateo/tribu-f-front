@@ -12,16 +12,6 @@ export async function GetClients() {
   });
 }
 
-export async function GetUsers() {
-  const url = "user/";
-  return await useFetch({
-    url: url,
-    soporte: true,
-    revalidate: true,
-    tags: ["users"],
-  });
-}
-
 export async function GetTickets(versionId: string) {
   const url = `ticket/version/${versionId}`;
   return await useFetch({
