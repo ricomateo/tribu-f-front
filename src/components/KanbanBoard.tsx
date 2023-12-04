@@ -5,14 +5,23 @@ import Button from "@/components/button";
 const KanbanBoard = (props: any) => {
   const { project_id, tasks } = props;
   const tareasNoIniciadas = tasks.filter(
-    (task: any) => task.state === "no iniciada"
+    (task: any) =>
+      task.state === "no iniciada" ||
+      task.state === "No iniciado" ||
+      task.state === "no iniciado"
   );
   const tareasEnProceso = tasks.filter(
-    (task: any) => task.state === "en proceso"
+    (task: any) =>
+      task.state === "en proceso" ||
+      task.state === "Iniciado" ||
+      task.state === "iniciado"
   );
   const tareasEnTests = tasks.filter((task: any) => task.state === "en tests");
   const tareasFinalizadas = tasks.filter(
-    (task: any) => task.state === "finalizada"
+    (task: any) =>
+      task.state === "finalizada" ||
+      task.state === "Finalizado" ||
+      task.state === "finalizado"
   );
 
   return (
