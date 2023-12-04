@@ -3,13 +3,6 @@ import Button from "@/components/button";
 import { FormEvent, useState } from "react";
 import { CreateTask } from "@/api/proyectos";
 
-const getUsuarios = async () => {
-  const response = await fetch(
-    "https://anypoint.mulesoft.com/mocking/api/v1/sources/exchange/assets/754f50e8-20d8-4223-bbdc-56d50131d0ae/recursos-psa/1.0.0/m/api/recursos"
-  );
-  const data = await response.json();
-  return data;
-};
 const TaskForm = (props: any) => {
   const { project_id, employees } = props;
 
@@ -33,7 +26,7 @@ const TaskForm = (props: any) => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const data = await CreateTask(taskData);
+      await CreateTask(taskData);
       window.location.href = "/projects/" + project_id + "/tasks";
     } catch (error) {
       console.error("Error al crear la tarea:", error);
@@ -162,55 +155,3 @@ const TaskForm = (props: any) => {
 };
 
 export default TaskForm;
-
-// //export default ProjectForm;
-
-// async function enviarFormulario() {
-//   // Obtener referencias a los elementos del formulario
-//   const nombreInput = document.getElementById('nombre') as HTMLInputElement;
-//   const edadInput = document.getElementById('edad') as HTMLInputElement;
-
-//   // Obtener los valores de los elementos
-//   const nombre = nombreInput.value;
-//   const edad = parseInt(edadInput.value, 10);
-
-// const hola: Project = {
-//   nombre,
-//   edad,
-// };
-
-// // Enviar los datos a la API utilizando fetch
-// try {
-//   const response = await fetch('URL_DE_TU_API', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       // Puedes agregar otros encabezados según las necesidades de tu API
-//     },
-//     body: JSON.stringify(formData),
-//   });
-
-//   if (response.ok) {
-//     // La solicitud fue exitosa
-//     console.log('Datos enviados correctamente');
-//   } else {
-//     // La solicitud falló
-//     console.error('Error al enviar los datos a la API');
-//   }
-// } catch (error) {
-//   console.error('Error de red:', error);
-// }
-// }
-
-/*
-fetch("https://samplewebsite.com/API/", {
-  method: "POST",
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    parameterOne: proyecto,
-  }),
-});
-*/

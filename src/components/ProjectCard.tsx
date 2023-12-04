@@ -154,14 +154,6 @@ export default function ProjectCard(props: any) {
           },
         }}
         overlayClassName="fixed top-0 left-0 right-0 bottom-0"
-        // overlayStyle={{
-        //   position: "fixed",
-        //   top: 0,
-        //   left: 0,
-        //   right: 0,
-        //   bottom: 0,
-        //   backgroundColor: "rgba(0, 0, 0, 0)",
-        // }}
       >
         <div className="text-l font-bold mb-4 p-4 bg-white">
           ¿Está seguro de que quiere eliminar el proyecto?

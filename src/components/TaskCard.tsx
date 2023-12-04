@@ -14,7 +14,7 @@ const TaskCard = (props: any) => {
 
   const handleDelete = async () => {
     try {
-      const response = await DeleteTask(task.id);
+      await DeleteTask(task.id);
       window.location.href = "/projects/" + task.project_id + "/tasks";
     } catch (error) {
       console.error("Error al crear el proyecto:", error);
@@ -162,38 +162,3 @@ const TaskCard = (props: any) => {
 };
 
 export default TaskCard;
-
-/*
-export default function TaskCard({ task }: { task: any }) {
-  console.log("TaskCard -> task: ", task);
-  return (
-    <div className="max-w-4xl mx-auto mt-8">
-      <div className="bg-gray-200 p-8 rounded-lg shadow-lg">
-        <h2 className="text-xl font-bold mb-4">{task.name}</h2>
-        <div className="project-details mb-4">
-          <p>
-            <strong>Fecha de creación:</strong> {task.creation_date}
-          </p>
-          <p>
-            <strong>Duración estimada:</strong> {task.expected_duration_days}
-          </p>
-          <p>
-            <strong>Descripción:</strong> {task.description}
-          </p>
-        </div>
-        <div className="project-actions flex space-x-4">
-          <Button
-            href={
-              "/projects/" + task.project_id + "/tasks/" + task.id + "/edit"
-            }
-          >
-            Editar tarea
-          </Button>
-
-          <button className="delete-button">Borrar tarea</button>
-        </div>
-      </div>
-    </div>
-  );
-}
-*/

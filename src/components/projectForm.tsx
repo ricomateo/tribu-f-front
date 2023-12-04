@@ -5,7 +5,7 @@ import { CreateProject } from "@/api/proyectos";
 
 export default function ProjectForm(props: any) {
   const { employees } = props;
-  const [isProjectCreated, setIsProjectCreated] = useState(false);
+  //const [isProjectCreated, setIsProjectCreated] = useState(false);
   const [projectData, setProjectData] = useState({
     name: "",
     state: "no iniciado",
@@ -25,7 +25,6 @@ export default function ProjectForm(props: any) {
     e.preventDefault();
     try {
       const data = await CreateProject(projectData);
-      console.log("Data del proyecto creado: ", data);
       window.location.href = "/projects/" + data.id;
     } catch (error) {
       console.error("Error al crear el proyecto:", error);
@@ -147,55 +146,3 @@ export default function ProjectForm(props: any) {
     </>
   );
 }
-
-// //export default ProjectForm;
-
-// async function enviarFormulario() {
-//   // Obtener referencias a los elementos del formulario
-//   const nombreInput = document.getElementById('nombre') as HTMLInputElement;
-//   const edadInput = document.getElementById('edad') as HTMLInputElement;
-
-//   // Obtener los valores de los elementos
-//   const nombre = nombreInput.value;
-//   const edad = parseInt(edadInput.value, 10);
-
-// const hola: Project = {
-//   nombre,
-//   edad,
-// };
-
-// // Enviar los datos a la API utilizando fetch
-// try {
-//   const response = await fetch('URL_DE_TU_API', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       // Puedes agregar otros encabezados según las necesidades de tu API
-//     },
-//     body: JSON.stringify(formData),
-//   });
-
-//   if (response.ok) {
-//     // La solicitud fue exitosa
-//     console.log('Datos enviados correctamente');
-//   } else {
-//     // La solicitud falló
-//     console.error('Error al enviar los datos a la API');
-//   }
-// } catch (error) {
-//   console.error('Error de red:', error);
-// }
-// }
-
-/*
-fetch("https://samplewebsite.com/API/", {
-  method: "POST",
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    parameterOne: proyecto,
-  }),
-});
-*/

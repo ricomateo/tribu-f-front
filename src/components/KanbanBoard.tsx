@@ -4,8 +4,6 @@ import Button from "@/components/button";
 
 const KanbanBoard = (props: any) => {
   const { project_id, tasks } = props;
-  //const {project_id} = props; { tasks } = props;
-  console.log("KANBAN BOARD -> tasks: ", tasks);
   const tareasNoIniciadas = tasks.filter(
     (task: any) => task.state === "no iniciada"
   );

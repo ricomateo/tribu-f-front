@@ -127,18 +127,6 @@ const EditTaskForm = (props: any) => {
             required
           />
         </label>
-        {/*
-            <label>
-          Duración estimada del proyecto:
-          <input
-            type="text"
-            name="duration"
-            value={taskData.duration}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        */}
         <div className="flex justify-between">
           <Button href={`/projects/${task.project_id}/tasks/${task.id}`}>
             {" "}
@@ -194,41 +182,3 @@ const EditTaskForm = (props: any) => {
 
 export default EditTaskForm;
 
-// //export default taskForm;
-
-// async function enviarFormulario() {
-//   // Obtener referencias a los elementos del formulario
-//   const nombreInput = document.getElementById('nombre') as HTMLInputElement;
-//   const edadInput = document.getElementById('edad') as HTMLInputElement;
-
-//   // Obtener los valores de los elementos
-//   const nombre = nombreInput.value;
-//   const edad = parseInt(edadInput.value, 10);
-
-// const hola: task = {
-//   nombre,
-//   edad,
-// };
-
-// // Enviar los datos a la API utilizando fetch
-// try {
-//   const response = await fetch('URL_DE_TU_API', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       // Puedes agregar otros encabezados según las necesidades de tu API
-//     },
-//     body: JSON.stringify(formData),
-//   });
-
-//   if (response.ok) {
-//     // La solicitud fue exitosa
-//     console.log('Datos enviados correctamente');
-//   } else {
-//     // La solicitud falló
-//     console.error('Error al enviar los datos a la API');
-//   }
-// } catch (error) {
-//   console.error('Error de red:', error);
-// }
-// }

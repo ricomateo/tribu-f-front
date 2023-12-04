@@ -31,7 +31,6 @@ export default function ProjectTable(props: any) {
   useEffect(() => {
     loadProjects(projects);
   }, [projects]);
-  //const loadedProjects = await getProjects();
 
   const handleSearchChange = (e: any) => {
     setSearch(e.target.value);
@@ -45,10 +44,6 @@ export default function ProjectTable(props: any) {
     setFilteredProjects(filtered);
   };
 
-  const resetSearch = () => {
-    setSearch("");
-    setFilteredProjects(originalProjects);
-  };
   return (
     <>
       <div className="container min-h-screen max-w-7xl mx-auto mt-8">
