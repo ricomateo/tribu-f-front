@@ -59,7 +59,7 @@ export interface Task {
   end_date: Date;
 }
 
-export interface CreateTicket {
+export interface CreateTicketInterface {
   title: string;
   severity: string;
   priority: string;

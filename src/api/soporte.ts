@@ -1,6 +1,6 @@
 import { revalidateTag } from "next/cache";
 import useFetch from "@/hooks/useFetch";
-import { CreateTicketParams } from "@/types/types";
+import { CreateTicketInterface, CreateTicketParams } from "@/types/types";
 
 export async function GetClients() {
   const url = "client/";
@@ -79,7 +79,7 @@ export async function CreateTicket(
 ) {
   "use server";
   const url = `ticket/version/${params.version_id}/client/${params.client_id}`;
-  const ticket: CreateTicket = {
+  const ticket: CreateTicketInterface = {
     title: formData.get("title") as string,
     severity: formData.get("severity") as string,
     priority: formData.get("priority") as string,
